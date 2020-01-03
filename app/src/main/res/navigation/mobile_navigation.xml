@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_dashboard">
+
+    <fragment
+        android:id="@+id/nav_dashboard"
+        android:name="com.example.gene404.ui.dashboard.DashboardFragment"
+        android:label="Dashboard"
+        tools:layout="@layout/fragment_dashboard" />
+
+    <fragment
+        android:id="@+id/nav_run_test"
+        android:name="com.example.gene404.ui.runTest.RunTestFragment"
+        android:label="Run Test"
+        tools:layout="@layout/fragment_run_test" />
+
+    <fragment
+        android:id="@+id/nav_view_test"
+        android:name="com.example.gene404.ui.viewTest.ViewTestFragment"
+        android:label="View Test"
+        tools:layout="@layout/fragment_view_test" />
+
+    <fragment
+        android:id="@+id/nav_manual_mode"
+        android:name="com.example.gene404.ui.manualMode.ManualModeFragment"
+        android:label="Manual Mode"
+        tools:layout="@layout/fragment_manual_mode" />
+
+    <fragment
+        android:id="@+id/nav_create_test"
+        android:name="com.example.gene404.ui.createTest.CreateTestFragment"
+        android:label="Create Test"
+        tools:layout="@layout/fragment_create_test" />
+
+    <fragment
+        android:id="@+id/nav_settings"
+        android:name="com.example.gene404.ui.settings.SettingsFragment"
+        android:label="Settings"
+        tools:layout="@layout/fragment_settings" />
+</navigation>

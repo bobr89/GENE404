@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Manual Test"
+        android:textSize="30dp"
+        android:textAlignment="center"
+        android:layout_marginTop="55dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Full System Control"
+        android:textSize="30dp"
+        android:textAlignment="center"
+        android:layout_marginTop="105dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <Button
+        android:id="@+id/push_button"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:layout_marginTop="184dp"
+        android:background="@drawable/round_button"
+        android:padding="15dp"
+        android:text="Test Basestation COnnection"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.207"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/valve_on"
+        android:layout_width="155dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="324dp"
+        android:layout_marginLeft="324dp"
+        android:layout_marginTop="184dp"
+        android:text="Turn Valve On"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/valve_off"
+        android:layout_width="155dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="488dp"
+        android:layout_marginLeft="488dp"
+        android:layout_marginTop="184dp"
+        android:text="Turn Valve Off"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/test_pressure_sensor_1"
+        android:layout_width="155dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="324dp"
+        android:layout_marginLeft="324dp"
+        android:layout_marginTop="252dp"
+        android:text="Test Pressure Sensor 1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/test_pressure_sensor_2"
+        android:layout_width="155dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="488dp"
+        android:layout_marginLeft="488dp"
+        android:layout_marginTop="252dp"
+        android:text="Test Pressure Sensor 2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
