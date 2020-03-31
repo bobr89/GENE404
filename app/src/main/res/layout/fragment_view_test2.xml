@@ -32,7 +32,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Test 1"
+        android:text="Test 2"
         android:textSize="30dp"
         android:textAlignment="center"
         android:layout_marginTop="105dp"
@@ -56,9 +56,9 @@
     <TextView
         android:layout_width="210dp"
         android:layout_height="30dp"
-        android:layout_marginTop="176dp"
+        android:layout_marginTop="160dp"
         android:background="@android:color/darker_gray"
-        android:text="Sensor 1: 13Pa"
+        android:text="Sensor 1: 3Pa"
         android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.756"
@@ -68,9 +68,21 @@
     <TextView
         android:layout_width="210dp"
         android:layout_height="30dp"
-        android:layout_marginTop="240dp"
+        android:layout_marginTop="212dp"
         android:background="@android:color/darker_gray"
-        android:text="Sensor 2: 5Pa"
+        android:text="Sensor 2: 9Pa"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.756"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:layout_width="210dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="264dp"
+        android:background="@android:color/darker_gray"
+        android:text="Sensor 3: 15Pa"
         android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.756"

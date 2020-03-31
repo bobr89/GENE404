@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Step 1"
+        android:textAlignment="center"
+        android:textSize="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:layout_width="126dp"
+        android:layout_height="27dp"
+        android:layout_marginTop="80dp"
+        android:text="Sensor 1"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.195"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/sensorReading1"
+        android:layout_width="210dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="80dp"
+        android:background="@android:color/darker_gray"
+        android:text="Sensor 1 Reading"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.55"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:layout_width="126dp"
+        android:layout_height="27dp"
+        android:layout_marginTop="116dp"
+        android:text="Sensor 2"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.195"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/sensorReading2"
+        android:layout_width="210dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="116dp"
+        android:background="@android:color/darker_gray"
+        android:text="Sensor 2 Reading"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.55"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--    <Button-->
+<!--        android:id="@+id/get_data"-->
+<!--        android:layout_width="155dp"-->
+<!--        android:layout_height="60dp"-->
+<!--        android:layout_marginStart="540dp"-->
+<!--        android:layout_marginLeft="540dp"-->
+<!--        android:layout_marginTop="152dp"-->
+<!--        android:text="Get Data"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
+
+    <TextView
+        android:layout_width="126dp"
+        android:layout_height="27dp"
+        android:layout_marginTop="152dp"
+        android:text="Sensor 3"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.195"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/sensorReading3"
+        android:layout_width="210dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="152dp"
+        android:background="@android:color/darker_gray"
+        android:text="Sensor 3 Reading"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.55"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/set_flow"
+        android:layout_width="155dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="104dp"
+        android:layout_marginLeft="104dp"
+        android:layout_marginTop="212dp"
+        android:text="Set Flow"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/flowInput"
+        android:layout_width="210dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="332dp"
+        android:layout_marginLeft="332dp"
+        android:layout_marginTop="228dp"
+        android:background="@android:color/darker_gray"
+        android:hint="Flow Value"
+        android:inputType="number"
+        android:textAlignment="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:layout_width="126dp"
+        android:layout_height="27dp"
+        android:layout_marginTop="280dp"
+        android:text="Flow Result"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.195"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/flowResult"
+        android:layout_width="210dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="276dp"
+        android:background="@android:color/darker_gray"
+        android:text="Flow Result"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.55"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/next_step"
+        android:layout_width="155dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="568dp"
+        android:layout_marginLeft="568dp"
+        android:layout_marginTop="248dp"
+        android:text="Next Step"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

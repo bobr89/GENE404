@@ -32,7 +32,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Test 1"
+        android:text="Test 3"
         android:textSize="30dp"
         android:textAlignment="center"
         android:layout_marginTop="105dp"
@@ -43,37 +43,12 @@
     <TextView
         android:layout_width="205dp"
         android:layout_height="59dp"
-        android:layout_marginTop="192dp"
+        android:layout_marginTop="196dp"
         android:background="@android:color/darker_gray"
         android:text="Results_Status: Success"
         android:textAlignment="center"
         android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.288"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:layout_width="210dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="176dp"
-        android:background="@android:color/darker_gray"
-        android:text="Sensor 1: 13Pa"
-        android:textSize="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.756"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:layout_width="210dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="240dp"
-        android:background="@android:color/darker_gray"
-        android:text="Sensor 2: 5Pa"
-        android:textSize="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.756"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -84,7 +59,7 @@
         android:layout_marginStart="532dp"
         android:layout_marginLeft="532dp"
         android:layout_marginTop="312dp"
-        android:text="Next Test"
+        android:text="Dashboard"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

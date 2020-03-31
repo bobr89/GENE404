@@ -1,4 +1,4 @@
-package com.example.gene404.ui.viewTest;
+package com.example.gene404.ui.steps;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -12,17 +12,17 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.example.gene404.R;
-import com.example.gene404.ui.steps.Step1;
+import com.example.gene404.ui.dashboard.DashboardFragment;
 
-public class ViewTestFragment extends Fragment {
-
-    private ViewTestViewModel viewTestViewModel;
+public class Summary extends Fragment {
+    private SummaryViewModel summaryViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        viewTestViewModel =
-                ViewModelProviders.of(this).get(ViewTestViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_view_test, container, false);
+
+        summaryViewModel =
+                ViewModelProviders.of(this).get(SummaryViewModel.class);
+        View root = inflater.inflate(R.layout.summary, container, false);
 
         Button nextStepButton = root.findViewById(R.id.next_step);
 
@@ -38,9 +38,9 @@ public class ViewTestFragment extends Fragment {
     }
 
     public void nextStepButtonFragment() {
-        ViewTestFragment2 newViewTestFragment2 = new ViewTestFragment2();
+        DashboardFragment newDashboardFragment = new DashboardFragment();
         FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.nav_host_fragment, newViewTestFragment2);
+        fragmentTransaction.replace(R.id.nav_host_fragment, newDashboardFragment);
         fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
     }

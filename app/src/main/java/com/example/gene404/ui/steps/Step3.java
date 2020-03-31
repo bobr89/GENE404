@@ -1,4 +1,4 @@
-package com.example.gene404.ui.viewTest;
+package com.example.gene404.ui.steps;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -12,17 +12,17 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.example.gene404.R;
-import com.example.gene404.ui.steps.Step1;
 
-public class ViewTestFragment extends Fragment {
+public class Step3 extends Fragment {
 
-    private ViewTestViewModel viewTestViewModel;
+    private Step3ViewModel step3ViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        viewTestViewModel =
-                ViewModelProviders.of(this).get(ViewTestViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_view_test, container, false);
+
+        step3ViewModel =
+                ViewModelProviders.of(this).get(Step3ViewModel.class);
+        View root = inflater.inflate(R.layout.step3, container, false);
 
         Button nextStepButton = root.findViewById(R.id.next_step);
 
@@ -38,9 +38,9 @@ public class ViewTestFragment extends Fragment {
     }
 
     public void nextStepButtonFragment() {
-        ViewTestFragment2 newViewTestFragment2 = new ViewTestFragment2();
+        Step4 newStep4 = new Step4();
         FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.nav_host_fragment, newViewTestFragment2);
+        fragmentTransaction.replace(R.id.nav_host_fragment, newStep4);
         fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
     }
