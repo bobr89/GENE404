@@ -3,6 +3,10 @@ package com.example.gene404;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
 import com.example.gene404.ui.manualMode.ManualModeFragment;
 import com.example.gene404.ui.runTest.RunTestFragment;
 import com.example.gene404.ui.settings.SettingsFragment;
@@ -25,6 +29,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.view.Menu;
+
+import org.json.JSONObject;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -91,4 +97,29 @@ public class MainActivity extends AppCompatActivity {
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
     }
+
+    // Use to Log out of the system
+//    public void LogOut() {
+//
+//        String url = "log out api call";
+//
+//        JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null,
+//                new Response.Listener<JSONObject>() {
+//                    @Override
+//                    public void onResponse(JSONObject response) {
+//                        try {
+//                            text_send.setText(response.toString());
+//                        } catch (OutOfMemoryError e) {
+//                            e.printStackTrace();
+//                        }
+//                    }
+//                }, new Response.ErrorListener() {
+//            @Override
+//            public void onErrorResponse(VolleyError error) {
+//                error.printStackTrace();
+//            }
+//        });
+//
+//        mQueue.add(request);
+//    }
 }

@@ -84,25 +84,26 @@ public class RunTestFragment extends Fragment {
 
     public void jsonParse() {
 
-        String url = "https://api.myjson.com/bins/kp9wz";
+        String url = "https://jsonplaceholder.typicode.com/todos/1";
 
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null,
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
                         try {
-                            JSONArray jsonArray = response.getJSONArray("employees");
+//                            JSONArray jsonArray = response.getJSONArray("employees");
                             textViewDisplay.setText(response.toString());
-                            for (int i = 0; i < jsonArray.length(); i++) {
-                                JSONObject employee = jsonArray.getJSONObject(i);
-
-                                String firstName = employee.getString("firstname");
-                                int age = employee.getInt("age");
-                                String mail = employee.getString("mail");
-
-                                textViewDisplay.append(firstName + ", " + String.valueOf(age) + ", " + mail + "\n\n");
-                            }
-                        } catch (JSONException e) {
+//                            for (int i = 0; i < jsonArray.length(); i++) {
+//                                JSONObject employee = jsonArray.getJSONObject(i);
+//
+//                                String firstName = employee.getString("firstname");
+//                                int age = employee.getInt("age");
+//                                String mail = employee.getString("mail");
+//
+//                                textViewDisplay.append(firstName + ", " + String.valueOf(age) + ", " + mail + "\n\n");
+//                            }
+                        }
+                        catch (OutOfMemoryError e) {
                             e.printStackTrace();
                         }
                     }

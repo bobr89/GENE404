@@ -40,6 +40,7 @@
         app:layout_constraintTop_toTopOf="parent"/>
 
     <TextView
+        android:id="@+id/log_text"
         android:layout_width="470dp"
         android:layout_height="185dp"
         android:textAlignment="center"
@@ -50,4 +51,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
+
+    <Button
+        android:id="@+id/change_name"
+        android:layout_width="155dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="536dp"
+        android:layout_marginLeft="536dp"
+        android:layout_marginTop="96dp"
+        android:text="Change Names"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
