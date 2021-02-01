@@ -58,7 +58,7 @@ width="350"
 The following photos shows the rest of the sub-components completed by the team which together forms the passenger rail car pneumatic brake system. The photo on the left shows the physical basestation and the photo on the right shows a WPSU.
 
 [<img src="/readme/pneumatic_circuit.png" align="left"
-width="530"
+width="480"
     hspace="10" vspace="10">](/readme/pneumatic_circuit.png)
 [<img src="/readme/wpsu.png" align="center"
 width="300"
