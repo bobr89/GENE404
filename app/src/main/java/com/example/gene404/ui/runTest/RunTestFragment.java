@@ -41,13 +41,7 @@ public class RunTestFragment extends Fragment {
         runTestViewModel =
                 ViewModelProviders.of(this).get(RunTestViewModel.class);
         View root = inflater.inflate(R.layout.fragment_run_test, container, false);
-//        final TextView textView = root.findViewById(R.id.text_gallery);
-//        runTestViewModel.getText().observe(this, new Observer<String>() {
-//            @Override
-//            public void onChanged(@Nullable String s) {
-//                textView.setText(s);
-//            }
-//        })
+
         Button button = root.findViewById(R.id.start_test);
         textViewDisplay = root.findViewById(R.id.result_status);
 
@@ -56,7 +50,6 @@ public class RunTestFragment extends Fragment {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                textViewDisplay.setText("Testing");
                 jsonParse();
             }
         });
@@ -86,28 +79,33 @@ public class RunTestFragment extends Fragment {
 
         String url = "https://jsonplaceholder.typicode.com/todos/1";
 
-        JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null,
-                new Response.Listener<JSONObject>() {
-                    @Override
-                    public void onResponse(JSONObject response) {
-                        try {
-//                            JSONArray jsonArray = response.getJSONArray("employees");
-                            textViewDisplay.setText(response.toString());
-//                            for (int i = 0; i < jsonArray.length(); i++) {
-//                                JSONObject employee = jsonArray.getJSONObject(i);
-//
-//                                String firstName = employee.getString("firstname");
-//                                int age = employee.getInt("age");
-//                                String mail = employee.getString("mail");
-//
-//                                textViewDisplay.append(firstName + ", " + String.valueOf(age) + ", " + mail + "\n\n");
-//                            }
-                        }
-                        catch (OutOfMemoryError e) {
-                            e.printStackTrace();
-                        }
+        JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
+            @Override
+            public void onResponse(JSONObject response) {
+                try {
+                    String testId = "";
+                    String userId = "";
+                    String completed = "";
+                    String comment = "";
+                    String output = "";
+
+                    try {
+                        testId = "  Test Id: " +response.getString("id");
+                        userId = "  User Id: " +response.getString("userId");
+                        completed = "  Completed: " +response.getString("completed");
+                        comment = "  Comment: " +response.getString("title");
+                    } catch (JSONException error) {
+                        error.printStackTrace();
                     }
-                }, new Response.ErrorListener() {
+
+                    output = testId+"\n"+userId+"\n"+completed+"\n"+comment;
+                    textViewDisplay.setText(output);
+                }
+                catch (OutOfMemoryError e) {
+                    e.printStackTrace();
+                }
+            }
+        }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
                 error.printStackTrace();

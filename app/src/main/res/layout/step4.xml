@@ -10,7 +10,8 @@
         android:layout_marginTop="28dp"
         android:text="Step 4"
         android:textAlignment="center"
-        android:textSize="30dp"
+        android:textSize="35dp"
+        android:fontFamily="@font/open_sans_light"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -18,12 +19,13 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="92dp"
+        android:layout_marginTop="124dp"
+        android:fontFamily="@font/open_sans_light"
         android:text="Select True when the system is charged"
         android:textAlignment="center"
         android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.276"
+        app:layout_constraintHorizontal_bias="0.388"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -31,21 +33,23 @@
         android:id="@+id/checkbox1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="92dp"
+        android:layout_marginTop="124dp"
+        android:onClick="onCheckboxClicked"
+        android:theme="@style/CustomCheckbox"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.702"
+        app:layout_constraintHorizontal_bias="0.782"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:layout_width="126dp"
-        android:layout_height="27dp"
-        android:layout_marginTop="160dp"
-        android:text="Sensor"
-        android:textAlignment="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="188dp"
+        android:fontFamily="@font/open_sans_light"
+        android:text="Sensor 1"
         android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.242"
+        app:layout_constraintHorizontal_bias="0.244"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -53,38 +57,13 @@
         android:id="@+id/sensorReading"
         android:layout_width="210dp"
         android:layout_height="30dp"
-        android:layout_marginTop="160dp"
-        android:background="@android:color/darker_gray"
+        android:layout_marginTop="188dp"
+        android:background="@drawable/custom_button"
+        android:fontFamily="@font/open_sans_light"
         android:text="Reading"
         android:textAlignment="center"
         android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.619"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/set_flow1"
-        android:layout_width="167dp"
-        android:layout_height="46dp"
-        android:layout_marginStart="128dp"
-        android:layout_marginLeft="128dp"
-        android:layout_marginTop="204dp"
-        android:text="Set Flow"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/flowInput1"
-        android:layout_width="210dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="328dp"
-        android:layout_marginLeft="328dp"
-        android:layout_marginTop="212dp"
-        android:background="@android:color/darker_gray"
-        android:hint="Flow Value"
-        android:inputType="number"
-        android:textAlignment="center"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -92,10 +71,16 @@
         android:id="@+id/next_step"
         android:layout_width="155dp"
         android:layout_height="60dp"
-        android:layout_marginStart="532dp"
-        android:layout_marginLeft="532dp"
-        android:layout_marginTop="312dp"
+        android:layout_marginStart="488dp"
+        android:layout_marginLeft="488dp"
+        android:layout_marginTop="236dp"
+        android:background="@drawable/custom_button"
+        android:enabled="false"
+        android:fontFamily="@font/open_sans_regular"
         android:text="Next Step"
+        android:textAllCaps="false"
+        android:textColor="#008cd0"
+        android:textSize="17dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

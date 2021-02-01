@@ -10,7 +10,7 @@ public class ViewTestViewModel2 extends ViewModel {
 
     public ViewTestViewModel2() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is slideshow fragment");
+        mText.setValue("This is a fragment");
     }
 
     public LiveData<String> getText() {

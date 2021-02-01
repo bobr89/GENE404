@@ -29,6 +29,13 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.w3c.dom.Text;
 
+import android.os.*;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Timer;
+import java.util.TimerTask;
+
 public class Step1 extends Fragment {
 
     private Step1ViewModel step1ViewModel;
@@ -43,7 +50,7 @@ public class Step1 extends Fragment {
 
     private TextView sensor1Display;
     private TextView sensor2Display;
-    private TextView sensor3Display;
+//    private TextView sensor3Display;
 
     private TextView flowResult;
 
@@ -59,7 +66,7 @@ public class Step1 extends Fragment {
         //Sensor1 Display
         sensor1Display = root.findViewById(R.id.sensorReading1);
         sensor2Display = root.findViewById(R.id.sensorReading2);
-        sensor3Display = root.findViewById(R.id.sensorReading3);
+//        sensor3Display = root.findViewById(R.id.sensorReading3);
 
         //Values
         flowValueInput = (EditText) root.findViewById(R.id.flowInput);
@@ -68,16 +75,11 @@ public class Step1 extends Fragment {
         readingValue = root.findViewById(R.id.sensorReading);
         //Buttons
         setFlowButton = root.findViewById(R.id.set_flow);
-//        getDataButton = root.findViewById(R.id.get_data);
 
         setFlowButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                openViewLastTestFragment();
-
                 flowValue = Integer.valueOf(flowValueInput.getText().toString());
-//                readingValue.setText(String.valueOf(flowValue*200/70));
-
                 jsonParseWithParameter(flowValue);
             }
         });
@@ -88,7 +90,6 @@ public class Step1 extends Fragment {
 
         mQueue = Volley.newRequestQueue(getActivity().getApplicationContext());
 
-        //Buttons
         nextStepButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -96,7 +97,8 @@ public class Step1 extends Fragment {
             }
         });
 
-        jsonParse();
+        updateSensorValues();
+//        jsonParse();
 
         return root;
     }
@@ -109,71 +111,91 @@ public class Step1 extends Fragment {
         fragmentTransaction.commit();
     }
 
-    public void jsonParse() {
-
-        String url = "https://api.myjson.com/bins/kp9wz";
-
-        JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null,
-                new Response.Listener<JSONObject>() {
-                    @Override
-                    public void onResponse(JSONObject response) {
+    public void updateSensorValues() {
+        final Handler handler = new Handler();
+        Timer timer = new Timer();
+        TimerTask doAsynchronousTask = new TimerTask() {
+            @Override
+            public void run() {
+                handler.post(new Runnable() {
+                    public void run() {
                         try {
-                            JSONArray jsonArray = response.getJSONArray("employees");
-                            sensor1Display.setText(response.toString().substring(0,3));
-                            for (int i = 0; i < jsonArray.length(); i++) {
-                                JSONObject employee = jsonArray.getJSONObject(i);
-
-                                String firstName = employee.getString("firstname");
-                                int age = employee.getInt("age");
-                                String mail = employee.getString("mail");
-
-                                sensor1Display.append(firstName + ", " + String.valueOf(age) + ", " + mail + "\n\n");
-                            }
-                        } catch (JSONException e) {
+                            jsonParse();
+                        } catch (Exception e) {
                             e.printStackTrace();
                         }
                     }
-                }, new Response.ErrorListener() {
+                });
+            }
+        };
+        timer.schedule(doAsynchronousTask, 0, 3000); //execute in every 3000 ms
+    }
+
+    public void jsonParse() {
+
+        String url = "https://jsonplaceholder.typicode.com/todos/1";
+
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
+
+            @Override
+            public void onResponse(JSONObject response) {
+
+                String sensor1 = "";
+                String sensor2 = "";
+
+                try {
+                    sensor1 = response.getString("id") +" Pa";
+                    sensor2 = response.getString("id") +" Pa";
+                } catch (JSONException error) {
+                    error.printStackTrace();
+                }
+
+                sensor1Display.setText(sensor1);
+                sensor2Display.setText(sensor2);
+            }
+        }, new Response.ErrorListener() {
+
             @Override
             public void onErrorResponse(VolleyError error) {
                 error.printStackTrace();
             }
         });
 
-        mQueue.add(request);
+        mQueue.add(jsonObjectRequest);
     }
 
     public void jsonParseWithParameter(float flowValue) {
 
-        String url = "https://api.myjson.com/bins/kp9wz";
+        String url = "https://jsonplaceholder.typicode.com/posts/1";
+        Integer intflowValue = Math.round(flowValue);
 
-        JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null,
-                new Response.Listener<JSONObject>() {
-                    @Override
-                    public void onResponse(JSONObject response) {
-                        try {
-                            JSONArray jsonArray = response.getJSONArray("employees");
-                            flowResult.setText(response.toString().substring(0,3));
-                            for (int i = 0; i < jsonArray.length(); i++) {
-                                JSONObject employee = jsonArray.getJSONObject(i);
+        Map<String, Integer> params = new HashMap<String, Integer>();
+        params.put("Flow Value", intflowValue);
+        JSONObject jsonObj = new JSONObject(params);
 
-                                String firstName = employee.getString("firstname");
-                                int age = employee.getInt("age");
-                                String mail = employee.getString("mail");
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.PUT, url, jsonObj, new Response.Listener<JSONObject>() {
 
-                                flowResult.append(firstName + ", " + String.valueOf(age) + ", " + mail + "\n\n");
-                            }
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-                    }
-                }, new Response.ErrorListener() {
+            @Override
+            public void onResponse(JSONObject response) {
+
+                String status = "";
+
+                if (response != null){
+                    status = "Response: success";
+                } else {
+                    status = "Response: fail";
+                }
+
+                flowResult.setText(status);
+            }
+        }, new Response.ErrorListener() {
+
             @Override
             public void onErrorResponse(VolleyError error) {
                 error.printStackTrace();
             }
         });
 
-        mQueue.add(request);
+        mQueue.add(jsonObjectRequest);
     }
 }

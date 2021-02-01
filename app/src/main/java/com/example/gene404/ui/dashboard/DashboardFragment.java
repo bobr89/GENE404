@@ -13,7 +13,7 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.example.gene404.R;
 import com.example.gene404.ui.settings.SettingsFragment;
-import com.example.gene404.ui.createTest.CreateTestFragment;
+import com.example.gene404.ui.runTest.RunTestFragment;
 import com.example.gene404.ui.viewTest.ViewTestFragment;
 import com.example.gene404.ui.manualMode.ManualModeFragment;
 
@@ -23,24 +23,17 @@ public class DashboardFragment extends Fragment {
 
     //Buttons
     private Button viewTestButton;
-    private Button createNewTestButton;
+    private Button runTestButton;
     private Button manualModeButton;
     private Button settingsButton;
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         dashboardViewModel = ViewModelProviders.of(this).get(DashboardViewModel.class);
         View root = inflater.inflate(R.layout.fragment_dashboard, container, false);
-//        final TextView textView = root.findViewById(R.id.text_home);
-//        homeViewModel.getText().observe(this, new Observer<String>() {
-//            @Override
-//            public void onChanged(@Nullable String s) {
-//                textView.setText(s);
-//            }
-//        });
 
         //Buttons
         viewTestButton = (Button) root.findViewById(R.id.view_last_test);
-        createNewTestButton = root.findViewById(R.id.create_new_task);
+        runTestButton = root.findViewById(R.id.run_test);
         manualModeButton = root.findViewById(R.id.manual_mode);
         settingsButton = root.findViewById(R.id.settings);
 
@@ -51,26 +44,25 @@ public class DashboardFragment extends Fragment {
                 openViewLastTestFragment();
             }
         });
-        createNewTestButton.setOnClickListener(new View.OnClickListener() {
+        runTestButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openCreateNewTestFragment();
+                openRunTestFragment();
             }
         });
-
         manualModeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openManualModeFragment();
             }
         });
-
         settingsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openSettingsFragment();
             }
         });
+
         return root;
     }
 
@@ -82,10 +74,10 @@ public class DashboardFragment extends Fragment {
         fragmentTransaction.commit();
     }
 
-    public void openCreateNewTestFragment() {
-        CreateTestFragment newCreateTestFragment = new CreateTestFragment();
+    public void openRunTestFragment() {
+        RunTestFragment newRunTestFragment = new RunTestFragment();
         FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.nav_host_fragment, newCreateTestFragment);
+        fragmentTransaction.replace(R.id.nav_host_fragment, newRunTestFragment);
         fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
     }

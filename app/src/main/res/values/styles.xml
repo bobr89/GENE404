@@ -19,4 +19,10 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+    <style name="CustomCheckbox" parent="Theme.AppCompat.NoActionBar">
+        <item name="colorControlNormal">#a9a9a9</item>
+        <item name="colorControlActivated">#008cd0</item>
+        <item name="android:textColor">#FFFF3F3C</item>
+    </style>
+
 </resources>

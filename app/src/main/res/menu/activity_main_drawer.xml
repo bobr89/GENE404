@@ -6,35 +6,26 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_dashboard"
+            android:icon="@drawable/ic_computer_black_24dp"
             android:title="Dashboard" />
         <item
             android:id="@+id/nav_run_test"
+            android:icon="@drawable/ic_play_arrow_black_24dp"
             android:title="Run Test" />
         <item
             android:id="@+id/nav_view_test"
+            android:icon="@drawable/ic_remove_red_eye_black_24dp"
             android:title="View Test" />
         <item
             android:id="@+id/nav_manual_mode"
+            android:icon="@drawable/ic_pan_tool_black_24dp"
             android:title="Manual Mode" />
-        <item
-            android:id="@+id/nav_create_test"
-            android:title="Create Test" />
+<!--        <item-->
+<!--            android:id="@+id/nav_create_test"-->
+<!--            android:title="Create Test" />-->
         <item
             android:id="@+id/nav_settings"
+            android:icon="@drawable/ic_menu_share"
             android:title="Settings" />
     </group>
-
-<!--    <item android:title="Communicate">-->
-<!--        <menu>-->
-<!--            <item-->
-<!--                android:id="@+id/nav_share"-->
-<!--                android:icon="@drawable/ic_menu_share"-->
-<!--                android:title="@string/menu_share" />-->
-<!--            <item-->
-<!--                android:id="@+id/nav_send"-->
-<!--                android:icon="@drawable/ic_menu_send"-->
-<!--                android:title="@string/menu_send" />-->
-<!--        </menu>-->
-<!--    </item>-->
-
 </menu>
